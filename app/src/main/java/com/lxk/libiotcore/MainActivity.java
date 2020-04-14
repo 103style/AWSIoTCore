@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements IotCoreConnectCal
         findViewById(R.id.connect)
                 .setOnClickListener(v -> {
                     ioTCoreManager.config(poolId, iotEndpoint, region);
+                    //开启订阅超时
+                    ioTCoreManager.setOpenSubscribeTimeout(true);
+                    //设置订阅超时时间  默认30s
+                    ioTCoreManager.setSubscribeTimeout(30);
                     ioTCoreManager.connect(MainActivity.this,
                             token,
                             identityId,
