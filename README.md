@@ -34,7 +34,7 @@ api 'com.github.103style:AWSIoTCore:1.0.0'
 * 通过 服务端接口 获取 `poolId`,`endponit`,`region`
 * 创建 `IoTCoreManager`实例，开始连接。
   ```java
-  private void initIoTCore(Context context, IoTBean ioTBean) {
+  private void initIoTCore(Context context, String cognitoToken, String identityId) {
       if (ioTCoreManager == null) {
           ioTCoreManager = new IoTCoreManager();
           
@@ -47,7 +47,7 @@ api 'com.github.103style:AWSIoTCore:1.0.0'
           //配置订阅等待超时时间 默认30s
           //ioTCoreManager.setSubscribeTimeout(30);
       }
-      ioTCoreManager.connect(context, ioTBean.cognito_token, ioTBean.identity_id, this);
+      ioTCoreManager.connect(context, cognitoToken, identityId, this);
   }
 
   @Override
