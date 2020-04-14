@@ -1,0 +1,14 @@
+{
+  "Version": "1.0",
+  "IdentityManager": {
+    "Default": {}
+  },
+  "CredentialsProvider": {
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "eu-central-1:42f672e6-e792-4f25-ba56-223bafd6231d",
+        "Region": "eu-central-1"
+      }
+    }
+  }
+}
