@@ -6,6 +6,20 @@ Samples：[aws-sdk-android-samples](https://github.com/awslabs/aws-sdk-android-s
 
 基于 亚马逊 [经过开发人员验证的身份 (身份池)](https://docs.aws.amazon.com/zh_cn/cognito/latest/developerguide/developer-authenticated-identities.html) 的使用
 
+`iotcore/build.gradle`
+```
+dependencies {
+    def aws_version = "2.16.+"
+    //目前为了兼容Android7以下 替换为修正Android 7 以下报错的jar
+    //目前 mqttv3 以合入 还未发新版本   请跟踪下面的连接 新版本的替换
+    // https://github.com/aws-amplify/aws-sdk-android/issues/1259
+    api("com.amazonaws:aws-android-sdk-iot:$aws_version") {
+        exclude module: 'org.eclipse.paho.client.mqttv3'
+    }
+    api files('libs/org.eclipse.paho.client.mqttv3-1.2.2.jar')
+    api "com.amazonaws:aws-android-sdk-mobile-client:$aws_version"
+}
+```
 
 ##  使用示例
 ### 添加依赖
