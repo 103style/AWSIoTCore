@@ -20,7 +20,7 @@ dependencies {
     api("com.amazonaws:aws-android-sdk-iot:$aws_version") {
         exclude module: 'org.eclipse.paho.client.mqttv3'
     }
-    api files('libs/org.eclipse.paho.client.mqttv3-1.2.2.jar')
+    implementation "org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.3"
     api "com.amazonaws:aws-android-sdk-mobile-client:$aws_version"
 }
 ```
@@ -40,7 +40,7 @@ allprojects {
 
 ```
 //app/build.gradle
-api 'com.github.103style:AWSIoTCore:1.0.0'
+api 'com.github.103style:AWSIoTCore:1.0.2'
 ```
 
 ###  连接
