@@ -6,8 +6,12 @@ Samples：[aws-sdk-android-samples](https://github.com/awslabs/aws-sdk-android-s
 
 基于 亚马逊 [经过开发人员验证的身份 (身份池)](https://docs.aws.amazon.com/zh_cn/cognito/latest/developerguide/developer-authenticated-identities.html) 的使用
 
-`iotcore/build.gradle`
+
+##  使用示例
+
+目前iotcore里面添加的依赖版本：
 ```
+iotcore/build.gradle
 dependencies {
     def aws_version = "2.16.+"
     //目前为了兼容Android7以下 替换为修正Android 7 以下报错的jar
@@ -21,10 +25,9 @@ dependencies {
 }
 ```
 
-##  使用示例
 ### 添加依赖
-`project.gradle`
 ```
+//project.gradle
 allprojects {
     repositories {
         //....
@@ -35,8 +38,8 @@ allprojects {
 }
 ```
 
-`app.gradle`
 ```
+//app/build.gradle
 api 'com.github.103style:AWSIoTCore:1.0.0'
 ```
 
