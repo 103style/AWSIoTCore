@@ -1,6 +1,4 @@
-[TOC]
-
-# IOTCore使用文档
+# AWSIOTCore使用文档
 
 ##  使用示例
 ###  连接
@@ -39,6 +37,50 @@
       mqttConnectSuccess = success;
   }
   ```
+
+
+### 订阅发布
+[MainActivity.java](https://github.com/103style/AWSIoTCore/blob/master/app/src/main/java/com/lxk/libiotcore/MainActivity.java)
+```
+private void publishTest() {
+    if (!connectSuccess) {
+        Log.e(TAG, "publishTest: not connected");
+    }
+    ioTCoreManager.publish(publishTopic, publishMsg,
+            (success, throwable) -> {
+                Log.e(TAG, "publishTest: success = " + success + ", \n throwable = " + throwable);
+            });
+}
+
+private void subscribeTest() {
+    if (!connectSuccess) {
+        Log.e(TAG, "subscribeTest: not connected");
+    }
+    ioTCoreManager.subscribe(subscribeTopic,
+            new IotCoreSubscribeCallback() {
+                @Override
+                public void subscribeCallback(boolean success, Throwable throwable) {
+                    Log.e(TAG, "subscribeTest: subscribeCallback success = " + success + ", \n throwable = " + throwable);
+                }
+
+                @Override
+                public void onMessageArrived(String msg) {
+                    Log.e(TAG, "subscribeTest: onMessageArrived msg = " + msg);
+                }
+
+                @Override
+                public void subscribeTimeout() {
+                    Log.e(TAG, "subscribeTest: subscribeTimeout  topic = " + subscribeTopic);
+                }
+
+                @Override
+                public void finish() {
+                    Log.e(TAG, "subscribeTest: subscribeTimeout  topic = " + subscribeTopic);
+                }
+            });
+}
+```
+
 ---
 
 
