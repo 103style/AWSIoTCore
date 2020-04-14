@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements IotCoreConnectCal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        System.out.println(IoTCoreManager.getVersionCode());
+        System.out.println(IoTCoreManager.getVersionName());
+
         ioTCoreManager = new IoTCoreManager();
         findViewById(R.id.connect)
                 .setOnClickListener(v -> {

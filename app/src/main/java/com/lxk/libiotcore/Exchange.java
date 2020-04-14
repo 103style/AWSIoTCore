@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
  * @author https://github.com/103style
  * @date 2020/4/14 17:07
  */
-public class Http {
+public class Exchange {
 
     private IoTCoreManager ioTCoreManager;
 
