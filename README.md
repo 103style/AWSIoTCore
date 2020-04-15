@@ -14,9 +14,9 @@ Samples：[aws-sdk-android-samples](https://github.com/awslabs/aws-sdk-android-s
 iotcore/build.gradle
 dependencies {
     def aws_version = "2.16.+"
-    //目前为了兼容Android7以下 替换为修正Android 7 以下报错的jar
-    //目前 mqttv3 以合入 还未发新版本   请跟踪下面的连接 新版本的替换
+    //目前还未合入 修复Android7下崩溃的 mqttv3 的 v1.2.3版本
     // https://github.com/aws-amplify/aws-sdk-android/issues/1259
+    //检查文件  https://github.com/aws-amplify/aws-sdk-android/blob/master/aws-android-sdk-iot/build.gradle
     api("com.amazonaws:aws-android-sdk-iot:$aws_version") {
         exclude module: 'org.eclipse.paho.client.mqttv3'
     }
