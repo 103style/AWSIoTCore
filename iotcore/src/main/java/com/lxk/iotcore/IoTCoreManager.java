@@ -16,6 +16,7 @@ import com.amazonaws.util.StringUtils;
 import com.lxk.iotcore.callback.IotCoreConnectCallback;
 import com.lxk.iotcore.callback.IotCorePublishCallback;
 import com.lxk.iotcore.callback.IotCoreSubscribeCallback;
+import com.lxk.iotcore.exception.IoTAuthException;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -110,7 +111,7 @@ public class IoTCoreManager {
         } catch (NotAuthorizedException exception) {
             IoTCoreLogger.e(exception.getMessage());
             if (connectCallback != null) {
-                connectCallback.mqttConnectException(exception);
+                connectCallback.mqttConnectException(new IoTAuthException(exception));
             }
         }
     }
