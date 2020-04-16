@@ -27,6 +27,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.alibaba:fastjson:1.2.60'
-    api 'com.github.103style:AWSIoTCore:1.0.3'
-//    implementation project(path: ':iotcore')
+//    api 'com.github.103style:AWSIoTCore:1.0.3'
+    implementation project(path: ':iotcore')
 }
